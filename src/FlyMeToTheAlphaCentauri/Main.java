@@ -6,14 +6,14 @@ public class Main {
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        long num =0;
-        long testNumCount=0;
-        long firstNum=0;
-        long secondNum=0;
-        long n = 1L;
+        long num =0L;
+        int testNumCount=0;
+        int firstNum=0;
+        int secondNum=0;
+        int n = 1;
         //테스트 코드의 갯수를 입력한다.
         testNumCount = scan.nextInt();
-        for (long i = 0L; i < testNumCount; i++) {
+        for (long i = 0; i < testNumCount; i++) {
             firstNum = scan.nextInt();
             secondNum = scan.nextInt();
             num = secondNum - firstNum;
