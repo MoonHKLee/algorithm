@@ -1,7 +1,7 @@
-package InsertionSort;
+package MergeSort;
 
-import java.util.ArrayList;
-        import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Main {
     static Scanner scan = new Scanner(System.in);
@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         //어레이리스트 선언
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        LinkedList<Integer> list = new LinkedList<Integer>();
 
         //받을 인수의 갯수를 저장하는 변수 선언
         int num=scan.nextInt();
@@ -19,18 +19,11 @@ public class Main {
             list.add(scan.nextInt());
         }
 
-        //insertionSort 알고리즘 작성.
-        int i,j;
-        for (i = 1; i < list.size(); i++) {
-            int key = list.get(i);
-            for (j=i-1;j>=0&&list.get(j)>key;j--){
-                list.set(j+1,list.get(j));
-            }
-            list.set(j+1,key);
-        }
+        //MergeSort 알고리즘 작성.
+
 
         //결과 출력
-        for ( i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
 
