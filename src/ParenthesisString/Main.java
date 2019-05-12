@@ -22,9 +22,10 @@ public class Main {
         for (int i = 0; i < num; i++) {
             //arr[i]==isRight 이면 Yes 아니면 NO 출력
             if(isRight(arr[i])){
+                //계산식 출력
                 System.out.println("YES");
             }else{
-                System.out.println("NO");
+                System.out.println("0");
             }
 
         }
@@ -33,12 +34,24 @@ public class Main {
 
     private static boolean isRight(String str){
         for (int i = 0; i < str.length(); i++) {
+            //소괄호
             if(str.charAt(i)=='('){
                 stack.addFirst(0);
-            }else{
+            }else if (str.charAt(i)==')'){
                 stack.addFirst(1);
                 if(!stack.isEmpty()&&stack.size()!=1) {
                     if (stack.get(1) == 0) {
+                        stack.removeFirst();
+                        stack.removeFirst();
+                    }
+                }
+            //대괄호
+            }else if(str.charAt(i)=='['){
+                stack.addFirst(2);
+            }else{
+                stack.addFirst(3);
+                if(!stack.isEmpty()&&stack.size()!=1) {
+                    if (stack.get(1) == 2) {
                         stack.removeFirst();
                         stack.removeFirst();
                     }
