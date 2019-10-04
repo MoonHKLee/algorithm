@@ -1,6 +1,4 @@
-package DoublePlus;
-
-import java.util.*;
+package SquarePlus;
 
 public class Main {
     public static void main(String[] args) {
