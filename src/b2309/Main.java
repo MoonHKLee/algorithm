@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+    static boolean finded = false;
     public static void main(String[] args) throws IOException {
         //input information
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -50,7 +51,9 @@ public class Main {
         for (int i = 0; i < answer.size(); i++) {
             sub+=answer.get(i);
         }
-        if(sub == 100)
-        answer.stream().sorted().forEach(System.out::println);
+        if(sub == 100 && !finded) {
+            answer.stream().sorted().forEach(System.out::println);
+            finded=true;
+        }
     }
 }
