@@ -2,15 +2,14 @@ package b2309;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     static boolean finded = false;
+    static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
     public static void main(String[] args) throws IOException {
         //input information
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int [] arr = new int[9];
         boolean[] visited = new boolean[9];
@@ -24,9 +23,10 @@ public class Main {
 
         //logic
         comb(arr,visited,0,9,7);
+        writer.close();
     }
 
-    static void comb(int[] arr, boolean[] visited, int depth, int n, int r){
+    static void comb(int[] arr, boolean[] visited, int depth, int n, int r) throws IOException {
         if (r == 0) {
             printAnswer(arr, visited, n);
             return;
@@ -52,7 +52,14 @@ public class Main {
             sub+=answer.get(i);
         }
         if(sub == 100 && !finded) {
-            answer.stream().sorted().forEach(System.out::println);
+            answer.stream().sorted().forEach(v-> {
+                try {
+                    writer.write(v +"\n");
+                    writer.flush();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
             finded=true;
         }
     }
