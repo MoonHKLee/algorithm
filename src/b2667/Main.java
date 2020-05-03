@@ -7,7 +7,6 @@ import static java.lang.System.in;
 
 public class Main {
     static int [][] arr;
-    static int [][] arr2;
     static int [] moveX={-1,1,0,0};
     static int [] moveY={0,0,-1,1};
     static Queue<Place> queue;
