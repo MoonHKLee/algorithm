@@ -49,6 +49,7 @@ public class Main {
             if(place.x * 2<=100000 && !visited[place.x*2]) {
                 queue.offer(new Place(place.x * 2, place.count + 1));
                 visited[place.x] = true;
+
             }
         }
     }
