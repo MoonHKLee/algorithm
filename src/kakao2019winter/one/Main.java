@@ -1,4 +1,4 @@
-package kakao2019winter;
+package kakao2019winter.one;
 
 import java.util.Stack;
 
