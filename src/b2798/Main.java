@@ -11,12 +11,30 @@ public class Main {
 
         String [] str = br.readLine().split(" ");
         int n = Integer.parseInt(str[0]);
-        int m = Integer.parseInt(str[0]);
+        int m = Integer.parseInt(str[1]);
+        int MAX = 0;
 
-        int [] arr = new int [n+1];
+        int [] arr = new int [n];
         str = br.readLine().split(" ");
-        for (int i = 1; i <= n; i++) {
-            arr[i] = Integer.parseInt(str[i-1]);
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(str[i]);
         }
+
+        //logic
+
+        for (int i = 0; i < n-2; i++) {
+            for (int j = i+1 ; j < n-1; j++) {
+                for (int k = j+1; k < n; k++) {
+                    int num = arr[i]+arr[j]+arr[k];
+                    if(num > MAX && num <=m){
+                        MAX = num;
+                    }
+                }
+            }
+        }
+        bw.write(""+MAX);
+        bw.flush();
+        bw.close();
+
     }
 }
