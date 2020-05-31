@@ -18,6 +18,7 @@ public class Solution {
         String answer = "";
         Map<String,Integer> map = new HashMap<>();
         for (String s:participant){
+            //getOrDefault 라는 기능을 사용하면 더우 좋다.
             if(map.containsKey(s)){
                 Integer number = map.get(s);
                 number++;
