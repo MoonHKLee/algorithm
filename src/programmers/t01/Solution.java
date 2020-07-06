@@ -24,7 +24,7 @@ public class Solution {
         return null;
     }
     public int [] sum(int [] base, int [] other){
-        return
+        return new int[1];
     }
 }
 
