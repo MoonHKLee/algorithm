@@ -8,7 +8,7 @@ public class Solution {
     Queue<Truck> queue = new LinkedList<>();
     public static void main(String[] args) throws InterruptedException {
         Solution solution = new Solution();
-        System.out.println(solution.solution(2,10 , new int[]{7,4,5,6}));
+        System.out.println(solution.solution(100,100 , new int[]{10,10,10,10,10,10,10,10,10,10}));
     }
     public int solution(int bridge_length, int weight, int[] truck_weights) throws InterruptedException {
         List<Integer> list = new ArrayList<>();
@@ -34,6 +34,7 @@ public class Solution {
                     .map(v -> new Truck(v.weight, v.position + 1))
                     .collect(Collectors.toCollection(LinkedTransferQueue::new));
             answer++;
+            System.out.println(queue+","+answer);
             if (queue.peek().position >= bridge_length) {
                 queue.poll();
             }
@@ -46,8 +47,8 @@ public class Solution {
     //이번 트럭이 현재 차례에 다리에 올라가면 무게가 초과하는지
     public boolean canOnBridge (Queue<Truck> queue, int truck, int weight){
         int sum = 0;
-        for (int i = 0; i < queue.size(); i++) {
-            sum += queue.stream().mapToInt(v -> v.weight).sum();
+        for (Truck value : queue) {
+            sum += value.weight;
         }
         return sum + truck <= weight;
     }
