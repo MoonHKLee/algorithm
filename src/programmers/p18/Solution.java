@@ -3,7 +3,7 @@ package programmers.p18;
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.solution("TRY HELLO WORLD"));
+        System.out.println(solution.solution("tRy  hElLo  wOrLd"));
     }
     public String solution(String s) {
         String[] strings = s.split(" ");
