@@ -1,9 +1,13 @@
 package programmers.p19;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 class Solution {
     int isCap = 1;
     public String solution(String s) {
-        StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder(s);
         int count = 0;
         int i = 0;
         while(i!=s.length()){
