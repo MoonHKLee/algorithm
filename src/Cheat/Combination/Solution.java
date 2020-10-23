@@ -1,4 +1,4 @@
-package Combination;
+package Cheat.Combination;
 
 import java.util.ArrayList;
 import java.util.List;
