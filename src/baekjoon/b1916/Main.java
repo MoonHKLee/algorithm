@@ -8,22 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-class Node implements Comparable<Node> {
-    int index;
-    int data;
-
-    Node(int index, int data) {
-        this.index = index;
-        this.data = data;
-    }
-
-    @Override
-    public int compareTo(Node o) {
-        return data - o.data;
-    }
-
-}
-
 public class Main {
     static int vertex, edge;
     static ArrayList<ArrayList<Node>> list; // 인접리스트.
@@ -90,4 +74,20 @@ public class Main {
         }
         return dist[end];
     }
+}
+
+class Node implements Comparable<Node> {
+    int index;
+    int data;
+
+    Node(int index, int data) {
+        this.index = index;
+        this.data = data;
+    }
+
+    @Override
+    public int compareTo(Node o) {
+        return data - o.data;
+    }
+
 }
